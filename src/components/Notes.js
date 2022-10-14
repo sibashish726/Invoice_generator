@@ -1,9 +1,9 @@
 import React, { Component }  from 'react';
-export default function Notes(){
+export default function Notes({notes}){
     return (
         <>
          <section className='mb-5'>
-           <p>Notes to the client...</p>
+           <p className='lg:w-1/2 text-justify'>{notes}</p>
          </section>
         </>
     )
