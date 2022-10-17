@@ -7,6 +7,7 @@ import MainDetails from './components/MainDetails';
 import ClientDetails from './components/ClientDetails';
 import Dates from './components/Dates';
 import Table from './components/Table';
+import TableForm from './components/TableForm';
 import './App.css'
 function App() {
   
@@ -24,6 +25,11 @@ function App() {
    const [invoiceDate, setInvoiceDate] = useState("");
    const [dueDate, setDueDate] = useState("");
    const [notes, setNotes] = useState("");
+   const [description, setDescription] = useState("");
+   const [quantity, setQuantity] = useState("");
+   const [price, setPrice] = useState("");
+   const [amount, setAmount] = useState("");
+
 
 
   const handlePrint = () =>{
@@ -38,7 +44,7 @@ function App() {
         <MainDetails name={name} address={address}/>
         <ClientDetails clientName={clientName} clientAddress={clientAddress}/>
         <Dates invoiceNumber={invoiceNumber} invoiceDate={invoiceDate} dueDate={dueDate}/>
-        <Table />
+        <Table description={description}/>
         <Notes notes={notes}/>
         <Footer name={name} address={address} website={website} email={email} bankAccount={bankAccount} phone={phone} bankName={bankName}/>
         <button
@@ -226,8 +232,11 @@ function App() {
           </div>
         </article>
          
-         
-          
+          {/* There will be the table */}
+           <article>
+             <TableForm description={description} setDescription={setDescription}/>
+           </article>
+          {/* End of table */}
           <label htmlFor="notes">Additional Notes</label>
            <textarea 
              name="notes" 

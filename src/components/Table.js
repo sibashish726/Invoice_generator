@@ -1,5 +1,5 @@
 import React, { Component }  from 'react';
-export default function Table(){
+export default function Table({description}){
     return (
         <>
           <table width="100%">
@@ -12,7 +12,7 @@ export default function Table(){
               </tr>
             </thead>
             <tbody>
-              <td>Something really big</td>
+              <td>{description}</td>
               <td>100</td>
               <td>$50</td>
               <td>$5000</td>
