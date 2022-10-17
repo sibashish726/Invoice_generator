@@ -13,6 +13,21 @@ code {
     monospace;
 }
 
+label {
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #112827;
+}
+input , textarea{
+  background-color: #f1f1f1;
+  padding: 0.5rem 0.5rem ;
+  border-radius: 0.3rem;
+  margin-bottom: 0.8rem;
+  color: #494848;
+  font-weight: 600;
+
+}
 .footer li{
   margin: 0.5rem 0.2rem;
 }
@@ -20,3 +35,4 @@ code {
 button{
   user-select: none;
 }
+
