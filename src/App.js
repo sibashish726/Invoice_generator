@@ -30,7 +30,7 @@ function App() {
    const [price, setPrice] = useState("");
    const [amount, setAmount] = useState("");
    const [list,setList] =useState([]);
-
+   const [total,setTotal] = useState(0);
 
   const handlePrint = () =>{
     window.print()
@@ -44,7 +44,7 @@ function App() {
         <MainDetails name={name} address={address}/>
         <ClientDetails clientName={clientName} clientAddress={clientAddress}/>
         <Dates invoiceNumber={invoiceNumber} invoiceDate={invoiceDate} dueDate={dueDate}/>
-        <Table description={description} price={price} amount={amount} quantity={quantity} list={list} setList={setList}/>
+        <Table description={description} price={price} amount={amount} quantity={quantity} list={list} setList={setList} total={total} setTotal={setTotal}/>
         <Notes notes={notes}/>
         <Footer name={name} address={address} website={website} email={email} bankAccount={bankAccount} phone={phone} bankName={bankName}/>
         <button
@@ -245,6 +245,8 @@ function App() {
                 setAmount={setAmount}
                 list={list}
                 setList={setList}
+                total={total}
+                setTotal={setTotal}
               />
            </article>
           {/* End of table */}
