@@ -29,7 +29,7 @@ function App() {
    const [quantity, setQuantity] = useState("");
    const [price, setPrice] = useState("");
    const [amount, setAmount] = useState("");
-
+   const [list,setList] =useState([]);
 
 
   const handlePrint = () =>{
@@ -44,7 +44,7 @@ function App() {
         <MainDetails name={name} address={address}/>
         <ClientDetails clientName={clientName} clientAddress={clientAddress}/>
         <Dates invoiceNumber={invoiceNumber} invoiceDate={invoiceDate} dueDate={dueDate}/>
-        <Table description={description}/>
+        <Table description={description} price={price} amount={amount} quantity={quantity} list={list} setList={setList}/>
         <Notes notes={notes}/>
         <Footer name={name} address={address} website={website} email={email} bankAccount={bankAccount} phone={phone} bankName={bankName}/>
         <button
@@ -233,8 +233,19 @@ function App() {
         </article>
          
           {/* There will be the table */}
-           <article>
-             <TableForm description={description} setDescription={setDescription}/>
+           <article >
+             <TableForm 
+                description={description} 
+                setDescription={setDescription} 
+                quantity={quantity}
+                setQuantity={setQuantity}
+                price={price}
+                setPrice={setPrice}
+                amount={amount}
+                setAmount={setAmount}
+                list={list}
+                setList={setList}
+              />
            </article>
           {/* End of table */}
           <label htmlFor="notes">Additional Notes</label>
